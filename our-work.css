@@ -1,0 +1,472 @@
+/* ================= 
+    Stylesheet for our-work.html page
+  =================*/
+
+/* The banner for the "Our Work" page */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --headings-font: "Exo", sans-serif;
+  --banner-font: "Exo", sans-serif;
+  --text-font: "Padauk", sans-serif;
+  --accent-text-color: #2caf67;
+  --cyan-accent-text-color: #14a098;
+  --gray-color: #d1d7e0;
+  --visit-the-app-color: hsl(341, 64%, 61%);
+}
+
+/* Warning message for users to switch back to portrait mode on mobile devices 
+|hover: none| makes sure that all devices that can hover (i.e. desktop computers)
+are not affected in landscape mode*/
+@media (max-width: 949px) and (orientation: landscape) and (hover: none) {
+.landscape-warning-image {
+  height: 100vh;
+  background: url(images/rotate.gif);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.body__scroll-effect {
+  display: none;
+}
+}
+
+.banner__our-work {
+  height: 100vh;
+  background-image: url(images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner__title--uppercase__our-work--font-size {
+  font-size: 22px;
+}
+
+/* Buttons for our-work.html page to go up or down through the page  */
+
+.see-portfolio-link--top {
+  position: absolute;
+  top: 12px;
+  left: calc(50% - 12.5px);
+}
+
+.see-portfolio-link--bottom {
+  position: absolute;
+  bottom: 1px;
+  left: calc(50% - 12.5px);  
+}    
+
+/* Animation for the banner page arrow */
+
+.see-portfolio-link--anim {
+  animation-name: see-portfolio-button-anim-down;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; 
+}
+@keyframes see-portfolio-button-anim-down {
+    0% {
+      bottom: 80px;
+    }
+    100% {
+      bottom: 60px;
+    }
+  }
+
+.see-portfolio-button__arrow {
+  width: 25px;
+  height: 25px;
+  transform: rotate(180deg);
+}
+
+/* Class without "rotate(180deg)" for the last button to go back to the header */
+.see-portfolio-button__arrow--up {
+  width: 25px;
+  height: 25px;
+}
+
+.our-work__page {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-work__page__first-layer {
+    background-color: var(--accent-text-color);
+    width: 85%;
+    height: 82.5%;
+    position: relative;
+    left: 7.5px;
+}
+
+.our-work__page__second-layer {
+  background-color: rgba(61, 207, 127, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -15px;
+  top: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.our-work__page__second-layer:hover {
+  left: -10px;
+  top: 10px;
+  box-shadow: 5px -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.our-work__page__whole-layer--link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.our-work__page__title {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  color: #0c0c0e;
+  transition: all 0.4s;
+}
+
+.our-work__page__text {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  color: #19191b;
+  text-align: left;
+  display: block;
+  line-height: 25px;
+}
+
+.our-work__page__second-layer:hover .our-work__page__title {
+  color: var(--visit-the-app-color);
+}
+
+.our-work__page__second-layer:hover .our-work__page__visit-the-website-link {
+  color:#0c0c0e;
+}
+
+.our-work__page__visit-the-website-link {
+  margin-left: 20px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  color: var(--visit-the-app-color);
+  font-weight: 700;
+  text-transform: lowercase;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.our-work__page__visit-the-website-link::after {
+  content: "";
+  background-color: var(--visit-the-app-color);
+  width: 62px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  border-radius: 100px;
+  transition: all 0.4s;
+}
+
+.our-work__page__visit-the-website-link::before {
+  content: "";
+  background-color:#0c0c0e;
+  width: 0px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  border-radius: 100px;
+  transition: width 0.4s;
+}
+
+.our-work__page__image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.4s;
+}
+
+.our-work__back-to-the-top {
+  color: var(--gray-color);
+  position: absolute;
+  bottom: 10px;
+  text-align: center; 
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 5px;
+  font-size: 18px;
+  font-weight: 700;
+} 
+
+@media (min-height: 558px) {
+  .our-work__page__image {
+    width: 85%;
+    margin-left: 45px;
+  }
+}
+@media (min-height: 750px) {
+  .our-work__page__title {
+    font-size: 24px;
+  }
+  
+  .our-work__page__text {
+    font-size: 20px;
+  }
+  
+  .our-work__page__visit-the-website-link {
+    font-size: 20px;
+  }
+  
+  .our-work__page__visit-the-website-link::after {
+    width: 70px;
+  }
+
+  .our-work__page__second-layer:hover .our-work__page__visit-the-website-link::before {
+    width: 70px;
+    z-index: 1;
+  }
+
+  .our-work__page__second-layer:not(:hover) .our-work__page__visit-the-website-link::before {
+    width: 0px;
+    z-index: 1;
+  }
+
+}
+@media (max-width: 500px) and (min-height: 800px) {
+  .our-work__page__title {
+    font-size: 26px;
+  }
+  
+  .our-work__page__text {
+    font-size: 22px;
+  }
+  
+  .our-work__page__visit-the-website-link {
+    font-size: 22px;
+  }
+  
+  .our-work__page__visit-the-website-link::after {
+    width: 77px;
+  }
+
+  .our-work__page__second-layer:hover .our-work__page__visit-the-website-link::before {
+    width: 77px;
+    z-index: 1;
+  }
+
+  .our-work__page__second-layer:not(:hover) .our-work__page__visit-the-website-link::before {
+    width: 0px;
+    z-index: 1;
+  }
+
+}
+@media (max-width: 500px) and (min-height: 850px) {
+  .our-work__page__title {
+    font-size: 27px;
+  }
+  
+  .our-work__page__text {
+    font-size: 24px;
+  }
+  
+  .our-work__page__visit-the-website-link {
+    font-size: 24px;
+  }
+  
+  .our-work__page__visit-the-website-link::after {
+    width: 84px;
+  }
+
+  .our-work__page__second-layer:hover .our-work__page__visit-the-website-link::before {
+    width: 84px;
+    z-index: 1;
+  }
+
+  .our-work__page__second-layer:not(:hover) .our-work__page__visit-the-website-link::before {
+    width: 0px;
+    z-index: 1;
+  }
+
+}
+@media (min-width: 500px) {
+  .banner__title--uppercase__our-work--font-size {
+    font-size: 26px;
+  }
+  .our-work__page__first-layer {
+    max-width: 515px;
+  }
+}
+
+@media (min-width: 992px) {
+    /* Feature query: if these 3 property-value pairs are supported by the browser, then the following block of code should
+  work, if not - it won't  */
+  @supports (scroll-behavior: smooth) and (scroll-snap-type: y mandatory) and (scroll-snap-align: center) {
+    .banner__our-work,
+    .our-work__page {
+      scroll-snap-align: center;
+    }
+  }
+
+  .see-portfolio-link--top {
+    top: 50px;
+  }
+  
+  .see-portfolio-link--bottom {
+    position: absolute;
+    bottom: 30px;
+  }  
+
+  .our-work__page__first-layer {
+    max-width: 917.094px;
+    width: 917.094px;
+    height: 450.5px;
+    left: 20px;
+  }
+
+  .our-work__page__second-layer {
+    left: -25px;
+    top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    transition: all 0.4s;
+  }
+
+  .our-work__page__second-layer:hover {
+    left: -20px;
+    top: 20px;
+    box-shadow: 5px -4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .our-work__page__title {
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    font-size: 29px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+ /*I had to change the font-size of the title of cards 5 and 9 because Firefox and Safari displayed the cards weirdly, this line fixed it   */
+  .our-work__page__title--font-size-firefox, .our-work__page__title-font-size-safari {
+    font-size: 28px;
+  }
+
+  
+  .our-work__page__text {
+    margin-left: 60px;
+    margin-bottom: 60px;
+    font-size: 22px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .our-work__page__visit-the-website-link {
+    margin-left: 60px;
+    margin-top: 0;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  
+  .our-work__page__visit-the-website-link::after {
+    width: 70px;
+    bottom: 110px;
+  }
+
+  .our-work__page__visit-the-website-link::before {
+    bottom: 110px;
+  }
+
+  #our-work__page-4 span, #our-work__page-5 span, #our-work__page-6 span, #our-work__page-9 span {
+    margin-bottom: 35px;
+  }
+  #our-work__page-5 .our-work__page__visit-the-website-link::after, #our-work__page-5 .our-work__page__visit-the-website-link::before {
+    bottom: 135px;
+  }
+  #our-work__page-7 .our-work__page__visit-the-website-link::after, #our-work__page-7 .our-work__page__visit-the-website-link::before {
+    bottom: 157px;
+  }
+  #our-work__page-9 .our-work__page__visit-the-website-link::after, #our-work__page-9 .our-work__page__visit-the-website-link::before {
+    bottom: 105px;
+  }
+  #our-work__page-10 .our-work__page__visit-the-website-link::after, #our-work__page-10 .our-work__page__visit-the-website-link::before {
+    bottom: 140px;
+  }
+
+  .our-work__page__second-layer:hover .our-work__page__visit-the-website-link::before {
+    width: 70px;
+    z-index: 1;
+  }
+
+  .our-work__page__second-layer:not(:hover) .our-work__page__visit-the-website-link::before {
+    width: 0px;
+    z-index: 1;
+  }
+
+  .our-work__page__image {
+    margin: 0px 5%;
+    width: 90%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4; 
+    filter: grayscale(50%);
+  }
+
+  /* You did this to eliminate the weird space that is visible between the bottom of the images and the container during the animation*/
+  #our-work__page-1 img, #our-work__page-2 img {
+    bottom: -1px;
+  }
+
+  .our-work__page__second-layer:hover .our-work__page__image {
+    transform: scale(1.1);
+    filter: grayscale(0);
+  }
+
+  .our-work__back-to-the-top {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1100px) {
+  .banner__title--uppercase__our-work--font-size {
+    font-size: 50px;
+  }
+  .see-portfolio-link--top, .see-portfolio-link--bottom {
+    left: calc(50% - 17.5px);
+  }
+  
+  .see-portfolio-button__arrow, .see-portfolio-button__arrow--up {
+    width: 35px;
+    height: 35px;
+  }
+}
+
