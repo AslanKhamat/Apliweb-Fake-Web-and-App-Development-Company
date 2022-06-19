@@ -33,6 +33,18 @@ main {
   overflow: hidden;
 }
 
+/* The background for the thank you page */
+.banner__thank-you__background {
+  height: 100vh;
+  background-image: url(images/thank-you-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
 .banner__nav {
   height: 455px;
   display: flex;
