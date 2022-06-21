@@ -240,10 +240,6 @@ main {
   padding: 0;
   text-align: center;
 }
-.our-services__text--link--dot {
-  margin: 0;
-  padding: 0;
-}
 .our-services__grid {
   height: 371px;
   display: grid;
